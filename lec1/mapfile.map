@@ -1,0 +1,62 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00000000         0x00040000         xr
+SRAM             0x20000000         0x00008000         xrw
+MY_MEMORY        0x00001000         0x00000070         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\Users\muhammed\AppData\Local\Temp\ccqslzsT.o
+
+.sprint         0x00001000       0x14
+ *(.sprint*)
+ .sprint        0x00001000       0x14 C:\Users\muhammed\AppData\Local\Temp\ccqslzsT.o
+                0x00001000                SprintArmfunc
+
+.text           0x00001014        0xe
+                0x00001014                _text = .
+ *(.isr_vector)
+ *(.text*)
+ .text          0x00001014        0xe C:\Users\muhammed\AppData\Local\Temp\ccqslzsT.o
+                0x00001014                main
+ *(.rodata*)
+                0x00001022                _etext = .
+
+.glue_7         0x00001024        0x0
+ .glue_7        0x00001024        0x0 linker stubs
+
+.glue_7t        0x00001024        0x0
+ .glue_7t       0x00001024        0x0 linker stubs
+
+.vfp11_veneer   0x00001024        0x0
+ .vfp11_veneer  0x00001024        0x0 linker stubs
+
+.v4_bx          0x00001024        0x0
+ .v4_bx         0x00001024        0x0 linker stubs
+
+.data           0x20000000        0x4 load address 0x00001022
+                0x20000000                _data = .
+ *(vtable)
+ *(.data*)
+ .data          0x20000000        0x4 C:\Users\muhammed\AppData\Local\Temp\ccqslzsT.o
+                0x20000004                _edata = .
+
+.bss            0x20000004        0x0 load address 0x00001026
+                0x20000004                _bss = .
+ *(.bss*)
+ .bss           0x20000004        0x0 C:\Users\muhammed\AppData\Local\Temp\ccqslzsT.o
+ *(COMMON)
+                0x20000004                _ebss = .
+OUTPUT(a.out elf32-littlearm)
+
+.comment        0x00000000       0x7e
+ .comment       0x00000000       0x7e C:\Users\muhammed\AppData\Local\Temp\ccqslzsT.o
+                                 0x7f (size before relaxing)
+
+.ARM.attributes
+                0x00000000       0x33
+ .ARM.attributes
+                0x00000000       0x33 C:\Users\muhammed\AppData\Local\Temp\ccqslzsT.o
